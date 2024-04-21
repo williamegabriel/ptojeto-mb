@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atendente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-input readonly="true" label="Proxima Senha:" value="{{ senhasService.inputNovaSenha }}"></ion-input>
+  </ion-card-header>
+ <ion-card>
+    <ion-card-content>
+      <ion-button expand="block" (click)="solicitarSenha()">Solicitar Senha</ion-button>
+      <ion-item *ngIf="senhaChamada !== null">
+        <ion-label>Sua senha foi chamada!</ion-label>
+        <ion-text>{{ senhaChamada?.guiche }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content> -->

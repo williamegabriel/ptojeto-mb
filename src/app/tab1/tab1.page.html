@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-input readonly="true" label="Senha:" value="{{ senhasService.inputNovaSenha }}"></ion-input>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" (click)="senhasService.gerarSenha('SP')">Senha prioritária</ion-button>
+      <ion-button expand="block" (click)="senhasService.gerarSenha('SE')">Senha Exame</ion-button>
+      <ion-button expand="block" (click)="senhasService.gerarSenha('SG')">Senha Geral</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-card>
+    <ion-card-content>
+      <ion-button expand="block" (click)="solicitarSenha()">Solicitar Senha</ion-button>
+      <ion-item * ngIf="senhaChamada !== null">
+        <ion-label>Sua senha foi chamada!</ion-label>
+        <ion-text>{{ senhaChamada?.guiche }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card> -->
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content>
